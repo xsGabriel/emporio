@@ -1,0 +1,403 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+body {
+    background-color: #05070a; /* Fundo quase preto azulado */
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+header {
+    background-color: #020305;
+    border-bottom: 2px solid #0056b3; /* Azul Real */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 0 15px 0;
+    text-shadow: 0 0 10px #1e90ff; /* Brilho azul mágico */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #1e90ff;
+    border-bottom: 2px solid #1e90ff;
+}
+
+/* --- BANNER PRINCIPAL --- */
+.banner {
+    background-color: #0b0e14;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 1px solid #1a222d;
+}
+
+.banner h2 {
+    color: #1e90ff;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* --- CARDS DE SAGAS (Home) --- */
+.destaques {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.card-saga {
+    background-color: #0f141c;
+    border: 1px solid #1a222d;
+    width: 280px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card-saga:hover {
+    transform: scale(1.05);
+    border-color: #1e90ff;
+}
+
+/* --- LAYOUT DO ACERVO --- */
+.layout-acervo {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.categorias {
+    width: 220px;
+    background-color: #0b0e14;
+    padding: 20px;
+    border: 1px solid #1a222d;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.categorias h3 {
+    color: #1e90ff;
+    border-bottom: 1px solid #1a222d;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.categorias ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categorias li {
+    margin-bottom: 12px;
+}
+
+.categorias a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.categorias a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* --- VITRINE DE LIVROS --- */
+.vitrine-catalogo {
+    flex-grow: 1;
+}
+
+.titulo-saga {
+    color: #1e90ff;
+    text-transform: uppercase;
+    border-left: 4px solid #0056b3;
+    padding-left: 15px;
+    margin: 40px 0 20px 0;
+}
+
+.lista-produtos {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-produto {
+    background-color: #0f141c;
+    border: 1px solid #1a222d;
+    width: calc(33.333% - 15px);
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+.card-produto:hover {
+    border-color: #1e90ff;
+    background-color: #121924;
+    transform: scale(1.05);
+    cursor: pointer;                                                                                                                                          
+}
+
+.imagem-placeholder {
+    width: 100%;
+    height: 350px;
+    background-color: transparent;
+    border: none;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.preco {
+    color: #1e90ff;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* --- BOTÕES E RODAPÉ --- */
+.botao {
+    display: inline-block;
+    background-color: #004080;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.botao:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #020305;
+    color: #555;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #1a222d;
+    margin-top: 50px;
+}   
+/* --- LAYOUT DA PÁGINA DE PRODUTO --- */
+.container-produto {
+    display: flex;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 50px;
+    background-color: #0b0e14;
+    border: 1px solid #1a222d;
+}
+
+.produto-imagem {
+    flex: 1;
+    text-align: center;
+}
+
+.capa-detalhe {
+    max-width: 100%;
+    height: auto;
+    max-height: 550px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 86, 179, 0.3); /* Brilho azul sutil na capa */
+}
+
+.produto-info {
+    flex: 1.5;
+}
+
+.produto-info h1 {
+    color: #ffffff;
+    margin-top: 0;
+    font-size: 2.2em;
+}
+
+.autor {
+    font-size: 1.1em;
+    color: #b3b3b3;
+}
+
+.preco-destaque {
+    font-size: 2em;
+    color: #1e90ff;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.sinopse {
+    line-height: 1.6;
+    border-top: 1px solid #1a222d;
+    padding-top: 20px;
+}
+
+.sinopse h3 {
+    color: #1e90ff;
+    text-transform: uppercase;
+}
+
+.botao-compra {
+    display: block;
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.botao-compra:hover {
+    background-color: #1e90ff;
+    box-shadow: 0 0 15px #1e90ff;
+}
+
+.entrega {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 10px;
+}
+/* --- LAYOUT DO GLOSSÁRIO --- */
+.container-glossario {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #0b0e14;
+    border: 1px solid #1a222d;
+    border-radius: 8px;
+}
+
+.introducao-glossario {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1a222d;
+}
+
+.introducao-glossario h2 {
+    color: #1e90ff;
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+/* --- LISTAS DE DEFINIÇÃO E CARDS NO GLOSSÁRIO --- */
+.termos-magicos h3, .tabela-sistemas h3 {
+    color: #ffffff;
+    border-left: 4px solid #0056b3;
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+/* O Segredo da Organização: Grid Layout */
+.grid-glossario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.card-termo {
+    background-color: #0f141c;
+    border: 1px solid #1a222d;
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card-termo:hover {
+    transform: translateY(-5px); /* Faz o card "flutuar" levemente para cima */
+    border-color: #1e90ff;
+}
+
+.titulo-saga-termo {
+    color: #1e90ff;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #1a222d;
+    padding-bottom: 10px;
+}
+
+.lista-definicao dt {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.lista-definicao dd {
+    color: #b3b3b3;
+    margin-left: 0; /* Removemos a margem gigante que tinha antes */
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* --- TABELAS --- */
+.tabela-sistemas {
+    margin-top: 50px;
+}
+
+.tabela-magia {
+    width: 100%;
+    border-collapse: collapse; /* Remove o espaço entre as bordas das células */
+    margin-top: 20px;
+    background-color: #0f141c;
+}
+
+.tabela-magia th, .tabela-magia td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #1a222d;
+}
+
+.tabela-magia th {
+    background-color: #004080;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabela-magia tr:hover {
+    background-color: #121924; /* Efeito hover nas linhas da tabela */
+}
+
+/* Destaque de cores para o nível de risco na tabela */
+.risco-alto {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.risco-medio {
+    color: #ffcc00;
+    font-weight: bold;
+}

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <title>Glossário Mágico | Empório Mágico</title>
+    <title>Grimório de Sabedoria | Empório Mágico</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -13,9 +13,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../index.html">O Grande Salão</a></li>
-                <li><a href="catalogo.html">O Acervo</a></li>
-                <li><a href="glossario.html">Glossário</a></li>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="catalogo.html">Acervo</a></li>
+                <li><a href="glossario.html">Grimório</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="teste.html">Teste</a></li>
                 <li><a href="carrinho.html">Carrinho</a></li>
                 <li><a href="cadastro.html">Minha Conta</a></li>
             </ul>
@@ -24,99 +26,77 @@
 
     <main class="container-glossario">
         <section class="introducao-glossario">
-            <h2>O Grimório de Sabedoria</h2>
-            <p>Seja bem-vindo aos arquivos proibidos. Aqui, catalogamos os termos e mistérios presentes nos tomos do nosso acervo para que você não se perca em sua jornada literária.</p>
+            <h2>Grimório de Termos Mágicos</h2>
+            <p>Consulte aqui as definições exatas de cada artefato e maldição de nossas sagas.</p>
         </section>
 
-       <section class="termos-magicos">
-            <h3>Termos e Expressões Arcanas</h3>
+        <section class="termos-magicos">
+            <h3>Termos e Conceitos</h3>
             
-            <div class="grid-glossario">
+            <dl class="lista-definicao grid-glossario">
                 
-                <article class="card-termo">
+                <div class="card-termo">
                     <h4 class="titulo-saga-termo">Shadow Slave</h4>
-                    <dl class="lista-definicao">
-                        <dt>Feitiço do Pesadelo</dt>
-                        <dd>Entidade cósmica que testa indivíduos através de "Pesadelos". Sobreviventes tornam-se Despertos.</dd>
+                    <dt>Feitiço do Pesadelo</dt>
+                    <dd>Uma entidade e doença mágica que infecta jovens, transportando-os para provações letais chamadas Pesadelos. Sobreviver a essas provações lhes concede Habilidades de Aspecto, transformando-os em Despertos capazes de canalizar Essência de Alma.</dd>
+                </div>
 
-                        <dt>Desperto</dt>
-                        <dd>Humanos com Núcleos de Alma que podem invocar Memórias (itens mágicos) e Ecos (monstros).</dd>
-                    </dl>
-                </article>
-
-                <article class="card-termo">
-                    <h4 class="titulo-saga-termo">Harry Potter</h4>
-                    <dl class="lista-definicao">
-                        <dt>Horcrux</dt>
-                        <dd>Objeto de magia negra contendo um fragmento de alma, criado para atingir a imortalidade.</dd>
-
-                        <dt>Trouxa (Muggle)</dt>
-                        <dd>Pessoa comum que nasce sem habilidades mágicas e não pertence ao mundo bruxo.</dd>
-                    </dl>
-                </article>
-
-                <article class="card-termo">
-                    <h4 class="titulo-saga-termo">Percy Jackson</h4>
-                    <dl class="lista-definicao">
-                        <dt>Semideus</dt>
-                        <dd>Filhos de um deus do Olimpo com um mortal. Possuem habilidades relacionadas ao seu parente divino.</dd>
-
-                        <dt>Névoa</dt>
-                        <dd>Força mágica que distorce a visão dos mortais, impedindo-os de ver monstros e deuses reais.</dd>
-                    </dl>
-                </article>
-
-                <article class="card-termo">
+                <div class="card-termo">
                     <h4 class="titulo-saga-termo">O Senhor dos Anéis</h4>
-                    <dl class="lista-definicao">
-                        <dt>O Um Anel</dt>
-                        <dd>Artefato forjado por Sauron para governar todos os outros Anéis de Poder da Terra Média.</dd>
+                    <dt>O Um Anel</dt>
+                    <dd>O mais poderoso dos Anéis de Poder, forjado secretamente por Sauron na Montanha da Perdição para controlar as outras raças da Terra Média. Concede invisibilidade, mas corrompe progressivamente a mente do portador com a vontade maligna de seu criador.</dd>
+                </div>
 
-                        <dt>Maiar</dt>
-                        <dd>Espíritos primordiais e poderosos que ajudaram a moldar o mundo (ex: Gandalf e Sauron).</dd>
-                    </dl>
-                </article>
+                <div class="card-termo">
+                    <h4 class="titulo-saga-termo">Harry Potter</h4>
+                    <dt>Horcrux</dt>
+                    <dd>Um poderoso objeto criado por meio de magia negra extrema para ancorar um fragmento da alma de um bruxo à terra. Exige o ato de assassinato para ser forjado, garantindo imortalidade ao seu criador contanto que a relíquia permaneça intacta.</dd>
+                </div>
 
-            </div>
+                <div class="card-termo">
+                    <h4 class="titulo-saga-termo">Percy Jackson</h4>
+                    <dt>Semideus (Meio-Sangue)</dt>
+                    <dd>Indivíduos nascidos da união entre um deus olimpiano e um mortal. Herdam poderes ligados ao seu parente divino e possuem reflexos inatos de batalha, características que frequentemente são diagnosticadas por médicos mortais como TDAH e dislexia.</dd>
+                </div>
+
+            </dl>
         </section>
 
         <section class="tabela-sistemas">
-            <h3>Classificação dos Sistemas Mágicos</h3>
-            <p>Um estudo comparativo das energias místicas presentes em nossos mundos.</p>
-            
-            <table class="tabela-magia">
+            <h3>Sistemas de Magia e Riscos</h3>
+            <table class="tabela-magia" border="1" width="100%">
                 <thead>
                     <tr>
-                        <th>Saga Literária</th>
-                        <th>Sistema Mágico</th>
-                        <th>Origem do Poder</th>
+                        <th>Saga</th>
+                        <th>Sistema</th>
+                        <th>Fonte de Poder</th>
                         <th>Nível de Risco</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Shadow Slave</td>
-                        <td>Núcleos de Alma e Aspectos</td>
-                        <td>Feitiço do Pesadelo / Deuses / Daemons</td>
-                        <td class="risco-alto">Mortal</td>
+                        <td align="center" valign="middle">Shadow Slave</td>
+                        <td>Aspectos e Habilidades</td>
+                        <td>Núcleo de Alma</td>
+                        <td class="risco-alto">Crítico (Corrupção Iminente)</td>
                     </tr>
                     <tr>
-                        <td>O Senhor dos Anéis</td>
-                        <td>Magia Subcriativa (Ainulindalë)</td>
-                        <td>Eru Ilúvatar / Valar / Maiar</td>
-                        <td class="risco-medio">Moderado</td>
+                        <td align="center" valign="middle">O Senhor dos Anéis</td>
+                        <td>Magia Sub-criativa e Anéis</td>
+                        <td>A Chama Imperecível e os Valar</td>
+                        <td class="risco-alto">Alto (Risco de Corrupção)</td>
                     </tr>
                     <tr>
-                        <td>Percy Jackson</td>
-                        <td>Domínios Divinos</td>
-                        <td>DNA Divino (Panteão Grego/Romano)</td>
-                        <td class="risco-alto">Alto</td>
+                        <td align="center" valign="middle">Harry Potter</td>
+                        <td>Varinhas e Encantamentos</td>
+                        <td>Núcleo da Varinha / Inato</td>
+                        <td class="risco-medio">Médio (Uso Indevido)</td>
                     </tr>
                     <tr>
-                        <td>Harry Potter</td>
-                        <td>Feitiçaria Genética</td>
-                        <td>Linhagem Mágica (Sangue e Varinhas)</td>
-                        <td class="risco-medio">Moderado</td>
+                        <td align="center" valign="middle">Percy Jackson</td>
+                        <td>Herança Divina</td>
+                        <td>Icor (Sangue Divino)</td>
+                        <td class="risco-medio">Variável</td>
                     </tr>
                 </tbody>
             </table>
@@ -125,6 +105,7 @@
 
     <footer>
         <p>&copy; 2026 Empório Mágico. Todos os direitos reservados.</p>
+        <p><a href="contato.html">Fale Conosco</a></p>
     </footer>
 
 </body>

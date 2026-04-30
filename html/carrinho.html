@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Seu Carrinho | Empório Mágico</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Empório Mágico</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="catalogo.html">Acervo</a></li>
+                <li><a href="glossario.html">Grimório</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="teste.html">Teste</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="cadastro.html">Minha Conta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-carrinho">
+        <h2 style="color: #1e90ff; text-align: center; margin-bottom: 30px;">Seus Artefatos Selecionados</h2>
+
+        <table class="tabela-carrinho" border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Obra</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Subtotal</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            
+            <tbody id="corpo-carrinho">
+                </tbody>
+
+            <tfoot id="rodape-carrinho">
+                <tr>
+                    <td rowspan="2" align="center" valign="middle" style="background-color: #121924; font-size: 24px;">📦</td>
+                    <td colspan="4" align="right" valign="middle">Frete Fixo (Corujas e Águias):</td>
+                    <td align="center" valign="middle" id="valor-frete">R$ 0,00</td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="right" valign="middle">Taxa de Proteção Arcana:</td>
+                    <td align="center" valign="middle" id="valor-taxa">R$ 0,00</td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="right" class="total-carrinho">TOTAL DA COMPRA:</td>
+                    <td align="center" class="total-carrinho" id="total-compra">R$ 0,00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div style="text-align: right; margin-top: 30px;">
+            <a href="catalogo.html" class="botao" style="background-color: #1a222d; margin-right: 15px;">Continuar Explorando</a>
+            <a href="pagamento.html" class="botao" style="background-color: #28a745;" onclick="verificarCheckout(event)">Finalizar Compra</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Empório Mágico. Todos os direitos reservados.</p>
+        <p><a href="contato.html">Fale Conosco</a></p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

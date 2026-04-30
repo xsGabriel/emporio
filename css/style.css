@@ -1,16 +1,16 @@
-/* --- CONFIGURAÇÕES GERAIS --- */
+/* config geral da pagina */
 body {
-    background-color: #05070a; /* Fundo quase preto azulado */
+    background-color: #05070a;
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* --- CABEÇALHO E NAVEGAÇÃO --- */
+/* header e nav (pdf 8) */
 header {
     background-color: #020305;
-    border-bottom: 2px solid #0056b3; /* Azul Real */
+    border-bottom: 2px solid #0056b3;
     padding: 20px;
     text-align: center;
 }
@@ -20,7 +20,7 @@ header h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 0 0 15px 0;
-    text-shadow: 0 0 10px #1e90ff; /* Brilho azul mágico */
+    text-shadow: 0 0 10px #1e90ff;
 }
 
 nav ul {
@@ -47,21 +47,83 @@ nav a:hover {
     border-bottom: 2px solid #1e90ff;
 }
 
-/* --- BANNER PRINCIPAL --- */
-.banner {
-    background-color: #0b0e14;
+/* banners da home */
+.hero-banner {
+    background: linear-gradient(to bottom, #001220, #0b0e14);
+    padding: 80px 20px;
     text-align: center;
-    padding: 50px 20px;
     border-bottom: 1px solid #1a222d;
 }
 
-.banner h2 {
+.hero-conteudo h2 {
+    color: #ffffff;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.hero-conteudo p {
+    color: #b3b3b3;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botao-hero {
+    background-color: #1e90ff;
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.botao-hero:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.diferenciais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    background-color: #0f141c;
+    flex-wrap: wrap; 
+}
+
+.beneficio {
+    text-align: center;
+    max-width: 250px;
+    padding: 20px;
+    background-color: #05070a;
+    border: 1px solid #1a222d;
+    border-radius: 8px;
+}
+
+.beneficio h3 {
     color: #1e90ff;
-    font-size: 28px;
     margin-bottom: 10px;
 }
 
-/* --- CARDS DE SAGAS (Home) --- */
+.beneficio p {
+    color: #b3b3b3;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.titulo-secao {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
 .destaques {
     display: flex;
     justify-content: center;
@@ -70,27 +132,34 @@ nav a:hover {
     flex-wrap: wrap;
 }
 
-/* --- CORREÇÃO DOS CARDS DE SAGA NA HOME --- */
+.grid-sagas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .card-saga {
-    background-color: #0f141c; /* Fundo sólido para esconder o card de trás quando crescer */
+    background-color: #0f141c; 
     border: 1px solid #1a222d;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
     box-sizing: border-box;
-    width: 100%; /* Deixa o CSS Grid cuidar da largura automaticamente */
-    position: relative; /* Necessário para o z-index funcionar */
+    width: 100%; 
+    position: relative; 
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .card-saga:hover {
     transform: scale(1.05);
     border-color: #1e90ff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Sombra pesada para dar impressão de flutuar */
-    z-index: 10; /* Garante que este card fique por cima de todos os outros ao crescer */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); 
+    z-index: 10; 
 }
 
-/* Garante que a imagem do card respeite o espaço */
 .card-saga .imagem-placeholder {
     width: 100%;
     height: 350px;
@@ -98,13 +167,18 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
-/* --- LAYOUT DO ACERVO --- */
+
+/* ========================================================== */
+/* LAYOUT DO ACERVO E CARDS (PLANO C - FLEXBOX ROBUSTO)        */
+/* ========================================================== */
+
 .layout-acervo {
     display: flex;
     padding: 30px;
     gap: 30px;
     max-width: 1300px;
     margin: 0 auto;
+    align-items: flex-start;
 }
 
 .categorias {
@@ -115,6 +189,7 @@ nav a:hover {
     height: fit-content;
     position: sticky;
     top: 20px;
+    flex-shrink: 0; 
 }
 
 .categorias h3 {
@@ -143,9 +218,23 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* --- VITRINE DE LIVROS --- */
 .vitrine-catalogo {
-    flex-grow: 1;
+    flex: 1;
+    min-width: 0; 
+}
+
+/* centralizando o titulo do acervo q bugou antes */
+.vitrine-catalogo div[align="center"] {
+    width: 100%;
+    display: block;
+}
+
+.vitrine-catalogo h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 40px;
 }
 
 .titulo-saga {
@@ -156,21 +245,27 @@ nav a:hover {
     margin: 40px 0 20px 0;
 }
 
+/* parent grid pras colunas de cards */
 .lista-produtos {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
+    align-items: stretch; /* faz todos da linha terem a msm altura */
 }
 
+/* solucao plano c: flexbox completo e altura minima no titulo */
 .card-produto {
     background-color: #0f141c;
     border: 1px solid #1a222d;
-    width: calc(33.333% - 15px);
+    border-radius: 8px;
     box-sizing: border-box;
     padding: 15px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
     transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
 }
 
@@ -183,45 +278,62 @@ nav a:hover {
 
 .imagem-placeholder {
     width: 100%;
-    height: 350px;
+    height: 250px; /* crava a altura das imagens */
     background-color: transparent;
     border: none;
-    object-fit: contain;
-    border-radius: 8px;
+    object-fit: contain; /* faz a capa aparecer inteira sem corte */
+    margin-bottom: 10px;
+    flex-shrink: 0; /* impede a imagem de espremer */
+}
+
+/* o fix pro titulo nao cortar igual no bug q rolou */
+.card-produto h4 {
+    margin: 10px 0;
+    color: #e0e0e0;
+    font-size: 1.1em;
+    line-height: 1.3;
+    /* altura minima q garante espaco pra ate 2 linhas sem pular */
+    min-height: 50px; 
+    display: flex;
+    align-items: center; /* centraliza vertical */
+    justify-content: center;
 }
 
 .preco {
     color: #1e90ff;
     font-weight: bold;
     font-size: 1.1em;
-    margin: 10px 0;
+    margin: 0 0 15px 0;
 }
 
-/* --- BOTÕES E RODAPÉ --- */
+/* empurra o botao pro fundo do card travando o alinhamento */
+.card-produto .botao {
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* botoes padrao */
 .botao {
     display: inline-block;
     background-color: #004080;
     color: #ffffff;
     text-decoration: none;
     padding: 10px 15px;
-    margin-top: 10px;
     font-weight: bold;
-    border-radius: 2px;
+    border-radius: 4px;
+    transition: 0.3s;
 }
 
 .botao:hover {
     background-color: #0056b3;
 }
 
-footer {
-    background-color: #020305;
-    color: #555;
-    text-align: center;
-    padding: 30px;
-    border-top: 1px solid #1a222d;
-    margin-top: 50px;
-}   
-/* --- LAYOUT DA PÁGINA DE PRODUTO --- */
+
+/* ========================================================== */
+/* PÁGINA DE PRODUTO, GLOSSÁRIO E TABELAS                     */
+/* ========================================================== */
+
 .container-produto {
     display: flex;
     max-width: 1100px;
@@ -242,7 +354,7 @@ footer {
     height: auto;
     max-height: 550px;
     border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 86, 179, 0.3); /* Brilho azul sutil na capa */
+    box-shadow: 0 0 20px rgba(0, 86, 179, 0.3);
 }
 
 .produto-info {
@@ -289,6 +401,7 @@ footer {
     font-size: 1.2em;
     margin-top: 30px;
     transition: 0.3s;
+    border-radius: 4px;
 }
 
 .botao-compra:hover {
@@ -301,7 +414,7 @@ footer {
     color: #777;
     margin-top: 10px;
 }
-/* --- LAYOUT DO GLOSSÁRIO --- */
+
 .container-glossario {
     max-width: 1000px;
     margin: 50px auto;
@@ -324,7 +437,6 @@ footer {
     margin-top: 0;
 }
 
-/* --- LISTAS DE DEFINIÇÃO E CARDS NO GLOSSÁRIO --- */
 .termos-magicos h3, .tabela-sistemas h3 {
     color: #ffffff;
     border-left: 4px solid #0056b3;
@@ -332,7 +444,6 @@ footer {
     margin-bottom: 30px;
 }
 
-/* O Segredo da Organização: Grid Layout */
 .grid-glossario {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -348,7 +459,7 @@ footer {
 }
 
 .card-termo:hover {
-    transform: translateY(-5px); /* Faz o card "flutuar" levemente para cima */
+    transform: translateY(-5px);
     border-color: #1e90ff;
 }
 
@@ -371,19 +482,19 @@ footer {
 
 .lista-definicao dd {
     color: #b3b3b3;
-    margin-left: 0; /* Removemos a margem gigante que tinha antes */
+    margin-left: 0; 
     margin-top: 5px;
     line-height: 1.5;
 }
 
-/* --- TABELAS --- */
 .tabela-sistemas {
     margin-top: 50px;
 }
 
+/* tabelas padrao (aula 6) */
 .tabela-magia {
     width: 100%;
-    border-collapse: collapse; /* Remove o espaço entre as bordas das células */
+    border-collapse: collapse; 
     margin-top: 20px;
     background-color: #0f141c;
 }
@@ -402,105 +513,210 @@ footer {
 }
 
 .tabela-magia tr:hover {
-    background-color: #121924; /* Efeito hover nas linhas da tabela */
+    background-color: #121924; 
 }
 
-/* Destaque de cores para o nível de risco na tabela */
-.risco-alto {
-    color: #ff4d4d;
-    font-weight: bold;
-}
 
-.risco-medio {
-    color: #ffcc00;
-    font-weight: bold;
-}
-/* --- MELHORIAS DA PÁGINA INICIAL (HOME) --- */
+/* ========================================================== */
+/* CSS DAS PAGINAS NOVAS (FORMULARIOS E TABELA DO CARRINHO)   */
+/* ========================================================== */
 
-/* Hero Banner */
-.hero-banner {
-    background: linear-gradient(to bottom, #001220, #0b0e14);
-    padding: 80px 20px;
-    text-align: center;
-    border-bottom: 1px solid #1a222d;
-}
-
-.hero-conteudo h2 {
-    color: #ffffff;
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    margin-top: 0;
-}
-
-.hero-conteudo p {
-    color: #b3b3b3;
-    font-size: 1.2em;
-    margin-bottom: 40px;
+/* formularios pdf 7 */
+.container-form {
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.botao-hero {
-    background-color: #1e90ff;
-    color: #ffffff;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
-}
-
-.botao-hero:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Diferenciais da Loja */
-.diferenciais {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 50px 20px;
-    background-color: #0f141c;
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
-}
-
-.beneficio {
-    text-align: center;
-    max-width: 250px;
-    padding: 20px;
-    background-color: #05070a;
+    margin: 50px auto;
+    background-color: #0b0e14;
+    padding: 40px;
     border: 1px solid #1a222d;
     border-radius: 8px;
 }
 
-.beneficio h3 {
+.container-form h2 {
     color: #1e90ff;
-    margin-bottom: 10px;
-}
-
-.beneficio p {
-    color: #b3b3b3;
-    font-size: 0.9em;
-    line-height: 1.5;
-}
-
-/* Ajuste no Grid das Sagas */
-.titulo-secao {
     text-align: center;
-    font-size: 2em;
-    margin-bottom: 40px;
-    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 
-.grid-sagas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 0 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.container-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b3b3b3;
+    font-weight: bold;
+}
+
+.container-form input[type="text"],
+.container-form input[type="password"],
+.container-form input[type="email"],
+.container-form select,
+.container-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #05070a;
+    border: 1px solid #1a222d;
+    color: #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.container-form textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.botoes-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.botoes-form input[type="submit"],
+.botoes-form input[type="reset"],
+.botoes-form button {
+    flex: 1;
+    padding: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botoes-form input[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+}
+
+.botoes-form input[type="submit"]:hover {
+    background-color: #1e90ff;
+}
+
+.botoes-form input[type="reset"] {
+    background-color: #1a222d;
+    color: #b3b3b3;
+}
+
+.botoes-form input[type="reset"]:hover {
+    background-color: #2a3546;
+}
+
+.opcoes-radio {
+    margin-bottom: 20px;
+}
+
+.opcoes-radio label {
+    display: inline;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+/* tabela avançada do carrinho (pdf 6) */
+.container-carrinho {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.tabela-carrinho {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #0b0e14;
+    border: 1px solid #1a222d;
+}
+
+.tabela-carrinho th {
+    background-color: #004080;
+    color: white;
+    padding: 15px;
+}
+
+.tabela-carrinho td {
+    padding: 15px;
+    border: 1px solid #1a222d;
+    color: #e0e0e0;
+}
+
+.foto-item-carrinho {
+    width: 50px;
+    border-radius: 4px;
+}
+
+.total-carrinho {
+    font-size: 1.5em;
+    color: #1e90ff;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #020305;
+    color: #555;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #1a222d;
+    margin-top: 50px;
+}
+/* ========================================================== */
+/* PÁGINA SOBRE NÓS (FORMATAÇÃO DE TEXTO DO PDF 3)            */
+/* ========================================================== */
+
+/* container principal q imita um pergaminho no escuro */
+.container-sobre {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: #0b0e14;
+    border: 1px solid #1a222d;
+    border-radius: 8px;
+    /* sombra interna pra dar um clima de misterio */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8); 
+}
+
+.container-sobre h2 {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* espacamento do texto e cor puxada pro cinza pra n doer o olho */
+.historia-loja {
+    margin-top: 30px;
+    line-height: 1.8;
+    color: #d4d4d4;
+    font-size: 1.15em;
+}
+
+.historia-loja p {
+    margin-bottom: 20px;
+}
+
+/* caixinha separada pro letreiro do marquee */
+.citacao-fundador {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #05070a;
+    border-left: 5px solid #1e90ff;
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+}
+.input-qtd {
+    width: 60px;
+    padding: 8px;
+    background-color: #05070a;
+    border: 1px solid #1e90ff;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.btn-remover {
+    background-color: #dc3545;
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.btn-remover:hover {
+    background-color: #c82333;
 }

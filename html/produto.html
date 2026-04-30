@@ -13,9 +13,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../index.html">O Grande Salão</a></li>
-                <li><a href="catalogo.html">O Acervo</a></li>
-                <li><a href="glossario.html">Glossário</a></li>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="catalogo.html">Acervo</a></li>
+                <li><a href="glossario.html">Grimório</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="teste.html">Teste</a></li>
                 <li><a href="carrinho.html">Carrinho</a></li>
                 <li><a href="cadastro.html">Minha Conta</a></li>
             </ul>
@@ -25,16 +27,27 @@
     <main class="container-produto" id="conteudo-produto">
         <section class="produto-imagem">
             <img id="livro-capa" src="" alt="Capa do Livro" class="capa-detalhe">
+            
+            <div class="manual-magico" style="margin-top: 20px; color: #b3b3b3; text-align: left; padding: 15px; border: 1px dashed #1a222d;">
+                <p><b>Manual de Ativação do Tomo:</b></p>
+<pre>
+Seja bem-vindo, Portador.
+Para abrir este livro:
+1. Canalize sua mana
+2. Diga: "Revelare"
+3. Vire a primeira página
+</pre>
+            </div>
         </section>
 
         <section class="produto-info">
             <h1 id="livro-titulo">Carregando...</h1>
-            <p class="autor">Escrito por: <b id="livro-autor">...</b></p>
+            <p class="autor">Escrito por: <b id="livro-autor">...</b> | <span id="livro-edicao">...</span><sup>a</sup> Edição</p>
             <p id="livro-preco" class="preco-destaque">...</p>
             
             <div class="sinopse">
                 <h3>Sinopse da Obra</h3>
-                <p id="livro-sinopse">Aguarde, os corvos estão trazendo as informações...</p>
+                <p id="livro-sinopse">Os corvos estão trazendo as informações...</p>
             </div>
 
             <div class="detalhes-tecnicos">
@@ -50,7 +63,8 @@
 
             <div class="acoes-compra">
                 <a href="carrinho.html" class="botao-compra">Adicionar ao Carrinho</a>
-                <p id="livro-entrega" class="entrega">📦 Calculando frete mágico...</p>
+                <p id="livro-entrega" class="entrega">📦 Entrega rápida.</p>
+                <p style="color: #777; font-size: 0.8em;">Fórmula de Desconto: M<sub>g</sub> + Pergaminho</p>
             </div>
         </section>
     </main>
@@ -59,264 +73,6 @@
         <p>&copy; 2026 Empório Mágico. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        // 1. Nosso "Banco de Dados" Completo com todos os 17 livros
-        const bancoDeLivros = {
-            // ================= SHADOW SLAVE =================
-            "ss1": {
-                titulo: "Shadow Slave - Vol. 1: Child of Shadows",
-                autor: "Guiltythree",
-                preco: "R$ 89,90",
-                capa: "../IMG/livros/SS-book1.jpg",
-                sinopse: "Crescendo na pobreza, <i>Sunny</i> nunca esperou nada da vida. No entanto, ele foi escolhido pelo <b>Feitiço do Pesadelo</b> e enviado para um mundo em ruínas.<br><br>Lá, ele deve lutar contra criaturas aterrorizantes e outros despertos para sobreviver. Mas Sunny guarda um segredo: ele tem a habilidade de controlar as sombras, mas a um custo terrível: ele é um escravo.",
-                paginas: "420",
-                editora: "Empório Mágico (Edição Exclusiva)",
-                idioma: "Português",
-                genero: "Dark Fantasy / LitRPG",
-                acabamento: "Capa Dura com detalhes em Foil Azul",
-                entrega: "📦 Entrega via Corvo em até 3 dias úteis."
-            },
-            "ss2": {
-                titulo: "Shadow Slave - Vol. 2: Demon of Change",
-                autor: "Guiltythree",
-                preco: "R$ 99,90",
-                capa: "../IMG/livros/SS-book2.jpg",
-                sinopse: "Após sobreviver ao seu primeiro Pesadelo, Sunny agora é um <b>Desperto</b>. Mas a verdadeira provação está apenas começando.<br><br>Ele é enviado para a infame <i>Cidade Sombria</i>, um lugar do qual poucos retornam vivos. Para sobreviver a este novo inferno e aos segredos antigos que ele esconde, Sunny terá que forjar alianças perigosas e testar os limites de suas habilidades de sombra.",
-                paginas: "480",
-                editora: "Empório Mágico (Edição Exclusiva)",
-                idioma: "Português",
-                genero: "Dark Fantasy / LitRPG",
-                acabamento: "Capa Dura com detalhes em Foil Azul",
-                entrega: "📦 Entrega via Corvo em até 3 dias úteis."
-            },
-
-            // ================= SENHOR DOS ANÉIS =================
-            "lotr1": {
-                titulo: "O Senhor dos Anéis: A Sociedade do Anel",
-                autor: "J.R.R. Tolkien",
-                preco: "R$ 59,90",
-                capa: "../IMG/livros/rings-book1.jpg",
-                sinopse: "Num vilarejo tranquilo do Condado, o jovem hobbit <i>Frodo Bolseiro</i> recebe uma imensa responsabilidade. Seu tio Bilbo lhe entrega um anel mágico que, ele logo descobre, é o <b>Um Anel</b>, forjado pelo Senhor Sombrio Sauron.<br><br>Para evitar que o mal domine a Terra Média, Frodo deve empreender uma jornada épica até as fendas da Montanha da Perdição para destruir o artefato.",
-                paginas: "448",
-                editora: "HarperCollins",
-                idioma: "Português",
-                genero: "Alta Fantasia / Épico",
-                acabamento: "Brochura com orelhas",
-                entrega: "📦 Entrega via Águias em até 5 dias úteis."
-            },
-            "lotr2": {
-                titulo: "O Senhor dos Anéis: As Duas Torres",
-                autor: "J.R.R. Tolkien",
-                preco: "R$ 59,90",
-                capa: "../IMG/livros/rings-book2.jpg",
-                sinopse: "A Sociedade do Anel foi rompida. Enquanto <i>Aragorn, Legolas e Gimli</i> perseguem os Uruk-hai para resgatar Merry e Pippin, uma sombra cai sobre a terra de Rohan.<br><br>Enquanto isso, Frodo e Sam continuam sua perigosa e solitária jornada em direção a Mordor, guiados pelo traiçoeiro <b>Gollum</b>. O poder de Isengard se ergue, e a guerra pela Terra Média começa.",
-                paginas: "416",
-                editora: "HarperCollins",
-                idioma: "Português",
-                genero: "Alta Fantasia / Épico",
-                acabamento: "Brochura com orelhas",
-                entrega: "📦 Entrega via Águias em até 5 dias úteis."
-            },
-            "lotr3": {
-                titulo: "O Senhor dos Anéis: O Retorno do Rei",
-                autor: "J.R.R. Tolkien",
-                preco: "R$ 64,90",
-                capa: "../IMG/livros/rings-book3.jpg",
-                sinopse: "Os exércitos do Senhor Sombrio estão marchando para Minas Tirith. A última e desesperada batalha dos Homens do Oeste está prestes a começar.<br><br>Enquanto Aragorn assume seu destino verdadeiro, a esperança de todo o mundo repousa nos ombros de Frodo. O Portador do Anel se aproxima do abismo ardente da <b>Montanha da Perdição</b>, onde o destino da Terra Média será selado.",
-                paginas: "528",
-                editora: "HarperCollins",
-                idioma: "Português",
-                genero: "Alta Fantasia / Épico",
-                acabamento: "Brochura com orelhas",
-                entrega: "📦 Entrega via Águias em até 5 dias úteis."
-            },
-
-            // ================= PERCY JACKSON =================
-            "pj1": {
-                titulo: "Percy Jackson e os Olimpianos: O Ladrão de Raios",
-                autor: "Rick Riordan",
-                preco: "R$ 64,90",
-                capa: "../IMG/livros/percy-book1.jpg",
-                sinopse: "<i>Percy Jackson</i> é um garoto de 12 anos com TDAH e dislexia. Logo, ele descobre a verdade: os deuses do Olimpo ainda existem, e ele é um <b>semideus</b>.<br><br>Pior ainda, Zeus roubou seu raio mestre, e Percy é o principal suspeito. Com a ajuda de um sátiro e da filha de Atena, ele tem poucos dias para encontrar o verdadeiro ladrão e impedir uma guerra.",
-                paginas: "400",
-                editora: "Intrínseca",
-                idioma: "Português",
-                genero: "Fantasia Urbana / Mitologia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Pégaso em até 2 dias úteis."
-            },
-            "pj2": {
-                titulo: "Percy Jackson e os Olimpianos: O Mar de Monstros",
-                autor: "Rick Riordan",
-                preco: "R$ 59,90",
-                capa: "../IMG/livros/percy-book2.jpg",
-                sinopse: "O Acampamento Meio-Sangue está em perigo. A árvore mágica de Thalia foi envenenada, e as fronteiras do refúgio dos semideuses estão desmoronando.<br><br>Para salvar o único lugar onde estão seguros, Percy e seus amigos precisam navegar pelas águas perigosas do <b>Mar de Monstros</b> para encontrar o lendário Velocino de Ouro, antes que seja tarde demais.",
-                paginas: "304",
-                editora: "Intrínseca",
-                idioma: "Português",
-                genero: "Fantasia Urbana / Mitologia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Pégaso em até 2 dias úteis."
-            },
-            "pj3": {
-                titulo: "Percy Jackson e os Olimpianos: A Maldição do Titã",
-                autor: "Rick Riordan",
-                preco: "R$ 59,90",
-                capa: "../IMG/livros/percy-book3.jpg",
-                sinopse: "Quando a deusa Ártemis desaparece após o resgate de dois novos meios-sangues, o Acampamento entra em alerta. Percy se junta às Caçadoras e a seus amigos em uma missão desesperada.<br><br>Eles têm até o solstício de inverno para encontrar a deusa e descobrir que monstro é poderoso o suficiente para sequestrá-la. Uma antiga <b>profecia</b> adverte que nem todos voltarão vivos.",
-                paginas: "336",
-                editora: "Intrínseca",
-                idioma: "Português",
-                genero: "Fantasia Urbana / Mitologia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Pégaso em até 2 dias úteis."
-            },
-            "pj4": {
-                titulo: "Percy Jackson e os Olimpianos: A Batalha do Labirinto",
-                autor: "Rick Riordan",
-                preco: "R$ 64,90",
-                capa: "../IMG/livros/percy-book4.jpg",
-                sinopse: "O tempo se esgota enquanto o exército do titã Cronos se prepara para invadir o Acampamento Meio-Sangue. O único caminho de entrada é o subterrâneo e misterioso <b>Labirinto de Dédalo</b>.<br><br>Percy e seus amigos mergulham na escuridão do labirinto, onde cada curva esconde armadilhas ilusórias e monstros cruéis, na esperança de encontrar o inventor antes dos inimigos.",
-                paginas: "392",
-                editora: "Intrínseca",
-                idioma: "Português",
-                genero: "Fantasia Urbana / Mitologia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Pégaso em até 2 dias úteis."
-            },
-            "pj5": {
-                titulo: "Percy Jackson e os Olimpianos: O Último Olimpiano",
-                autor: "Rick Riordan",
-                preco: "R$ 69,90",
-                capa: "../IMG/livros/percy-book5.jpg",
-                sinopse: "Os deuses estão em guerra contra Tifão, deixando o Monte Olimpo (no Empire State Building) virtualmente indefeso. O exército de Cronos marcha sobre as ruas de Nova York.<br><br>Com apenas dezesseis anos, a grande profecia recai sobre os ombros de Percy. Liderando um exército de jovens semideuses, ele fará sua última posição para defender a civilização e enfrentar seu <b>destino</b>.",
-                paginas: "384",
-                editora: "Intrínseca",
-                idioma: "Português",
-                genero: "Fantasia Urbana / Mitologia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Pégaso em até 2 dias úteis."
-            },
-
-            // ================= HARRY POTTER =================
-            "hp1": {
-                titulo: "Harry Potter e a Pedra Filosofal",
-                autor: "J.K. Rowling",
-                preco: "R$ 54,90",
-                capa: "../IMG/livros/harry-book1.jpg",
-                sinopse: "<i>Harry Potter</i> é um garoto órfão que vive infeliz debaixo da escada. Tudo muda perto de seu décimo primeiro aniversário, quando descobre que é um bruxo e foi convidado a estudar em <b>Hogwarts</b>.<br><br>Mas as trevas que tiraram a vida de seus pais ainda espreitam os corredores do castelo, buscando um artefato lendário que concede a imortalidade.",
-                paginas: "320",
-                editora: "Rocco",
-                idioma: "Português",
-                genero: "Fantasia / Magia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Coruja em até 1 dia útil."
-            },
-            "hp2": {
-                titulo: "Harry Potter e a Câmara Secreta",
-                autor: "J.K. Rowling",
-                preco: "R$ 54,90",
-                capa: "../IMG/livros/harry-book2.jpg",
-                sinopse: "O segundo ano de Harry em Hogwarts é ameaçado antes mesmo de começar por um elfo doméstico chamado Dobby. Após ignorar os avisos, Harry chega à escola.<br><br>Logo, mensagens sinistras aparecem nas paredes alertando que a <b>Câmara Secreta</b> foi aberta. Quando alunos começam a ser petrificados, Harry precisa descobrir o monstro escondido nas entranhas do castelo.",
-                paginas: "288",
-                editora: "Rocco",
-                idioma: "Português",
-                genero: "Fantasia / Magia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Coruja em até 1 dia útil."
-            },
-            "hp3": {
-                titulo: "Harry Potter e o Prisioneiro de Azkaban",
-                autor: "J.K. Rowling",
-                preco: "R$ 59,90",
-                capa: "../IMG/livros/harry-book3.jpg",
-                sinopse: "Sirius Black, um perigoso assassino e suposto seguidor de Voldemort, fugiu da intransponível prisão de <b>Azkaban</b>. E tudo indica que ele está atrás de Harry Potter.<br><br>Com os assustadores Dementadores patrulhando a escola, Harry terá que enfrentar seus maiores medos e descobrir a verdade sombria sobre o passado de sua família.",
-                paginas: "348",
-                editora: "Rocco",
-                idioma: "Português",
-                genero: "Fantasia / Magia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Coruja em até 1 dia útil."
-            },
-            "hp4": {
-                titulo: "Harry Potter e o Cálice de Fogo",
-                autor: "J.K. Rowling",
-                preco: "R$ 74,90",
-                capa: "../IMG/livros/harry-book4.jpg",
-                sinopse: "Hogwarts sedia o lendário <b>Torneio Tribruxo</b>, uma competição perigosa entre escolas de magia. Misteriosamente, o nome de Harry é selecionado pelo Cálice de Fogo, forçando-o a competir.<br><br>Enfrentando dragões, sereianos e labirintos mortais, o maior desafio de Harry será a sombra de um inimigo antigo que trama seu retorno triunfal.",
-                paginas: "584",
-                editora: "Rocco",
-                idioma: "Português",
-                genero: "Fantasia / Magia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Coruja em até 1 dia útil."
-            },
-            "hp5": {
-                titulo: "Harry Potter e a Ordem da Fênix",
-                autor: "J.K. Rowling",
-                preco: "R$ 84,90",
-                capa: "../IMG/livros/harry-book5.jpg",
-                sinopse: "O Lorde das Trevas retornou, mas o Ministério da Magia nega a verdade. Hogwarts é invadida pela tirânica burocrata Dolores Umbridge, que proíbe o ensino prático de feitiços defensivos.<br><br>Percebendo que a guerra é iminente, Harry funda em segredo a <b>Armada de Dumbledore</b> para preparar seus colegas para o conflito sombrio que se aproxima.",
-                paginas: "796",
-                editora: "Rocco",
-                idioma: "Português",
-                genero: "Fantasia / Magia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Coruja em até 1 dia útil."
-            },
-            "hp6": {
-                titulo: "Harry Potter e o Enigma do Príncipe",
-                autor: "J.K. Rowling",
-                preco: "R$ 74,90",
-                capa: "../IMG/livros/harry-book6.jpg",
-                sinopse: "Com Voldemort ganhando força abertamente, Hogwarts não é mais um porto seguro. Dumbledore recruta Harry para uma jornada pelas memórias mais obscuras e perigosas do jovem Tom Riddle.<br><br>Enquanto investigam a imortalidade do Lorde das Trevas, Harry encontra um antigo livro de poções pertencente a alguém que se autodenomina o <b>Príncipe Mestiço</b>.",
-                paginas: "512",
-                editora: "Rocco",
-                idioma: "Português",
-                genero: "Fantasia / Magia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Coruja em até 1 dia útil."
-            },
-            "hp7": {
-                titulo: "Harry Potter e as Relíquias da Morte",
-                autor: "J.K. Rowling",
-                preco: "R$ 79,90",
-                capa: "../IMG/livros/harry-book7.jpg",
-                sinopse: "O Ministério caiu. Dumbledore está morto. Harry, Rony e Hermione abandonam Hogwarts em uma busca desesperada para destruir os fragmentos da alma de Voldemort: as <b>Horcruxes</b>.<br><br>Caçados impiedosamente, eles também descobrem a lenda das Relíquias da Morte. A batalha final estourará nas paredes do castelo, e Harry deve fazer o último sacrifício.",
-                paginas: "592",
-                editora: "Rocco",
-                idioma: "Português",
-                genero: "Fantasia / Magia",
-                acabamento: "Brochura",
-                entrega: "📦 Entrega via Coruja em até 1 dia útil."
-            }
-        };
-
-        // 2. Pega o "id" que está na URL da página (ex: ?id=ss1)
-        const parametrosUrl = new URLSearchParams(window.location.search);
-        const idDoLivro = parametrosUrl.get('id');
-
-        // 3. Busca o livro no banco de dados
-        const livroSelecionado = bancoDeLivros[idDoLivro];
-
-        // 4. Se o livro existir, injeta as informações no HTML
-        if (livroSelecionado) {
-            document.title = livroSelecionado.titulo + " | Empório Mágico";
-            document.getElementById('livro-capa').src = livroSelecionado.capa;
-            document.getElementById('livro-titulo').innerHTML = livroSelecionado.titulo;
-            document.getElementById('livro-autor').innerHTML = livroSelecionado.autor;
-            document.getElementById('livro-preco').innerHTML = livroSelecionado.preco;
-            document.getElementById('livro-sinopse').innerHTML = livroSelecionado.sinopse;
-            document.getElementById('livro-paginas').innerHTML = livroSelecionado.paginas;
-            document.getElementById('livro-editora').innerHTML = livroSelecionado.editora;
-            document.getElementById('livro-idioma').innerHTML = livroSelecionado.idioma;
-            document.getElementById('livro-genero').innerHTML = livroSelecionado.genero;
-            document.getElementById('livro-acabamento').innerHTML = livroSelecionado.acabamento;
-            document.getElementById('livro-entrega').innerHTML = livroSelecionado.entrega;
-        } else {
-            // Se o ID for inválido ou não existir
-            document.getElementById('conteudo-produto').innerHTML = "<h2 style='color: white; text-align: center; width: 100%; margin-top: 50px;'>Erro: O tomo que você procura não foi encontrado em nosso acervo.</h2>";
-        }
-    </script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

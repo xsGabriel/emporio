@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Minha Conta | Empório Mágico</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Empório Mágico</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="catalogo.html">Acervo</a></li>
+                <li><a href="glossario.html">Grimório</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="teste.html">Teste</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="cadastro.html">Minha Conta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-form">
+        <h2>Criar Pergaminho de Acesso</h2>
+        
+        <!-- form basico do pdf 7 -->
+        <form action="../index.html" method="get">
+            
+            <!-- input text padrao pra string -->
+            <label>Nome Completo do Viajante:</label>
+            <input type="text" name="nome" required placeholder="Digite seu nome">
+
+            <!-- input email q ja faz a validacao automatica do @ (pdf 7) -->
+            <label>E-mail de Contato:</label>
+            <input type="email" name="email" required placeholder="bruxo@hogwarts.com">
+
+            <!-- input password q oculta os caracteres digitados -->
+            <label>Senha de Proteção (Feitiço):</label>
+            <input type="password" name="senha" required placeholder="Sua senha secreta">
+
+            <div class="botoes-form">
+                <!-- botoes submit e reset q o prof exigiu -->
+                <input type="submit" value="Criar Conta">
+                <input type="reset" value="Limpar Tudo">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Empório Mágico. Todos os direitos reservados.</p>
+        <p><a href="contato.html">Fale Conosco</a></p>
+    </footer>
+
+</body>
+</html>

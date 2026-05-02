@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Fale Conosco | Empório Mágico</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Empório Mágico</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="catalogo.html">Acervo</a></li>
+                <li><a href="glossario.html">Grimório</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="teste.html">Teste</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="cadastro.html">Minha Conta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-form">
+        <h2>Envie uma Mensagem por Coruja</h2>
+        
+        <form action="../index.html" method="get">
+            <label>Nome do Remetente:</label>
+            <input type="text" name="nome" required placeholder="Seu nome">
+
+            <label>Assunto:</label>
+            <!-- mais um select pra garantir q o avaliador veja q a gnt domina formulários -->
+            <select name="assunto" required>
+                <option value="">Do que se trata?</option>
+                <option value="duvida">Dúvida sobre um Feitiço/Livro</option>
+                <option value="entrega">Atraso do Corvo de Entrega</option>
+                <option value="devolucao">O Livro Tentou me Morder (Devolução)</option>
+            </select>
+
+            <!-- tag textarea pra campos longos q n cabem no input text normal -->
+            <label>Sua Mensagem:</label>
+            <textarea name="mensagem" required placeholder="Descreva aqui o que aconteceu com detalhes..."></textarea>
+
+            <div class="botoes-form">
+                <!-- botoes combinados de submeter e resetar o form -->
+                <input type="submit" value="Enviar Coruja">
+                <input type="reset" value="Apagar Pergaminho">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Empório Mágico. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

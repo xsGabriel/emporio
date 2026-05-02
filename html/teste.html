@@ -28,10 +28,12 @@
         <h2>Descubra sua Saga Destinada</h2>
         <p style="text-align: center; color: #b3b3b3; margin-bottom: 30px;">Responda ao chamado das relíquias e descubra qual universo você pertence.</p>
 
+        <!-- comeco do formulario cobrado no pdf 7 -->
         <form id="quiz-magico">
             <div class="pergunta">
                 <label>1. Qual ambiente mais te atrai em uma jornada?</label>
                 <div class="opcoes-radio">
+                    <!-- input type radio pra multipla escolha onde so 1 pode ser selecionada -->
                     <input type="radio" name="p1" value="ss" id="ss1" required> <label for="ss1">Ruínas sombrias e cidades esquecidas</label><br>
                     <input type="radio" name="p1" value="lotr" id="lotr1"> <label for="lotr1">Florestas antigas e montanhas majestosas</label><br>
                     <input type="radio" name="p1" value="pj" id="pj1"> <label for="pj1">Acampamentos à beira-mar e cidades modernas</label><br>
@@ -62,6 +64,7 @@
             <div class="pergunta">
                 <label>4. Quais traços definem sua alma? (Selecione todos que se aplicam):</label>
                 <div class="opcoes-radio">
+                    <!-- input type checkbox pra respostas q permitem marcar mais de uma (pdf 7) -->
                     <input type="checkbox" name="tracos" value="coragem" id="t1"> <label for="t1">Coragem extrema</label><br>
                     <input type="checkbox" name="tracos" value="ambicao" id="t2"> <label for="t2">Ambição por poder</label><br>
                     <input type="checkbox" name="tracos" value="curiosidade" id="t3"> <label for="t3">Curiosidade insaciável</label>
@@ -69,6 +72,7 @@
             </div>
 
             <div class="botoes-form">
+                <!-- button type button pra disparar o JS e type reset pra limpar os campos da tela toda -->
                 <button type="button" class="botao" onclick="processarTeste()">Descobrir minha Saga</button>
                 <input type="reset" value="Limpar Teste" class="botao" style="background-color: #1a222d;">
             </div>

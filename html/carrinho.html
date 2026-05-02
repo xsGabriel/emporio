@@ -7,6 +7,7 @@
 </head>
 <body>
 
+    <!-- tag semantica header do pdf 8 -->
     <header>
         <div class="logo">
             <h1>Empório Mágico</h1>
@@ -27,7 +28,9 @@
     <main class="container-carrinho">
         <h2 style="color: #1e90ff; text-align: center; margin-bottom: 30px;">Seus Artefatos Selecionados</h2>
 
+        <!-- inicio da tabela avancada usando os atributos do pdf 6 -->
         <table class="tabela-carrinho" border="1" width="100%">
+            <!-- thead para o cabecalho -->
             <thead>
                 <tr>
                     <th>Item</th>
@@ -39,12 +42,17 @@
                 </tr>
             </thead>
             
+            <!-- tbody para o corpo de dados -->
             <tbody id="corpo-carrinho">
-                </tbody>
+                <!-- conteudo gerado dinamicamente -->
+            </tbody>
 
+            <!-- tfoot para o rodape exigido na aula -->
             <tfoot id="rodape-carrinho">
                 <tr>
+                    <!-- rowspan do pdf 6 pra juntar a caixa em duas linhas verticais -->
                     <td rowspan="2" align="center" valign="middle" style="background-color: #121924; font-size: 24px;">📦</td>
+                    <!-- colspan pra juntar as colunas da direita pra caber o texto de frete -->
                     <td colspan="4" align="right" valign="middle">Frete Fixo (Corujas e Águias):</td>
                     <td align="center" valign="middle" id="valor-frete">R$ 0,00</td>
                 </tr>
@@ -65,6 +73,7 @@
         </div>
     </main>
 
+    <!-- tag semantica footer do pdf 8 -->
     <footer>
         <p>&copy; 2026 Empório Mágico. Todos os direitos reservados.</p>
         <p><a href="contato.html">Fale Conosco</a></p>

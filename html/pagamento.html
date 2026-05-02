@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Finalizar Invocação | Empório Mágico</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Empório Mágico</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="catalogo.html">Acervo</a></li>
+                <li><a href="glossario.html">Grimório</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="teste.html">Teste</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="cadastro.html">Minha Conta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-form">
+        <h2>Detalhes da Transação Arcana</h2>
+        
+        <form action="../index.html" method="get">
+            <label>Endereço do Santuário (Entrega):</label>
+            <input type="text" name="endereco" required placeholder="Rua, Número, Reino">
+
+            <!-- tag select com options pro menu suspenso q ele ensinou no pdf 7 -->
+            <label>Escolha a Forma de Pagamento:</label>
+            <select name="pagamento" required>
+                <option value="">Selecione a magia de troca...</option>
+                <option value="pix">Transferência Rápida (PIX)</option>
+                <option value="cartao">Cartão de Crédito Mágico</option>
+                <option value="dracmas">Dracmas de Ouro</option>
+            </select>
+
+            <!-- input type file obrigatorio pras notas do form -->
+            <label>Anexar Comprovante (Se transferência de dracmas):</label>
+            <input type="file" name="comprovante" accept="image/*, .pdf">
+
+            <!-- checkbox extra de termos e condicoes -->
+            <div class="opcoes-radio" style="margin-top: 20px;">
+                <input type="checkbox" id="termos" required> 
+                <label for="termos">Juro não estar enfeitiçado e aceito os termos do Empório.</label>
+            </div>
+
+            <div class="botoes-form">
+                <!-- ao clicar aqui a gnt limpa a memoria do carrinho pro fluxo fazer sentido (ta la no script) -->
+                <input type="submit" value="Confirmar Pedido" onclick="localStorage.removeItem('emporioCarrinho')">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Empório Mágico. Todos os direitos reservados.</p>
+        <p><a href="contato.html">Fale Conosco</a></p>
+    </footer>
+
+</body>
+</html>

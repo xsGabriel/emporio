@@ -1,4 +1,6 @@
-/* config geral da pagina */
+/* ========================================================== */
+/* CONFIGURAÇÃO GERAL E SEMÂNTICA HTML5 (PDF 8)               */
+/* ========================================================== */
 body {
     background-color: #05070a;
     color: #e0e0e0;
@@ -7,7 +9,7 @@ body {
     padding: 0;
 }
 
-/* header e nav (pdf 8) */
+/* formatando a tag header exigida no html5 */
 header {
     background-color: #020305;
     border-bottom: 2px solid #0056b3;
@@ -23,6 +25,7 @@ header h1 {
     text-shadow: 0 0 10px #1e90ff;
 }
 
+/* formatando o menu nav do html5 */
 nav ul {
     list-style: none;
     padding: 0;
@@ -169,7 +172,7 @@ nav a:hover {
 
 
 /* ========================================================== */
-/* LAYOUT DO ACERVO E CARDS (PLANO C - FLEXBOX ROBUSTO)        */
+/* LAYOUT DO ACERVO E CARDS                                   */
 /* ========================================================== */
 
 .layout-acervo {
@@ -199,6 +202,7 @@ nav a:hover {
     margin-top: 0;
 }
 
+/* listas nao ordenadas padrao do pdf 5 */
 .categorias ul {
     list-style: none;
     padding: 0;
@@ -223,7 +227,6 @@ nav a:hover {
     min-width: 0; 
 }
 
-/* centralizando o titulo do acervo q bugou antes */
 .vitrine-catalogo div[align="center"] {
     width: 100%;
     display: block;
@@ -245,17 +248,15 @@ nav a:hover {
     margin: 40px 0 20px 0;
 }
 
-/* parent grid pras colunas de cards */
 .lista-produtos {
     list-style: none;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
-    align-items: stretch; /* faz todos da linha terem a msm altura */
+    align-items: stretch;
 }
 
-/* solucao plano c: flexbox completo e altura minima no titulo */
 .card-produto {
     background-color: #0f141c;
     border: 1px solid #1a222d;
@@ -278,24 +279,22 @@ nav a:hover {
 
 .imagem-placeholder {
     width: 100%;
-    height: 250px; /* crava a altura das imagens */
+    height: 250px;
     background-color: transparent;
     border: none;
-    object-fit: contain; /* faz a capa aparecer inteira sem corte */
+    object-fit: contain;
     margin-bottom: 10px;
-    flex-shrink: 0; /* impede a imagem de espremer */
+    flex-shrink: 0;
 }
 
-/* o fix pro titulo nao cortar igual no bug q rolou */
 .card-produto h4 {
     margin: 10px 0;
     color: #e0e0e0;
     font-size: 1.1em;
     line-height: 1.3;
-    /* altura minima q garante espaco pra ate 2 linhas sem pular */
     min-height: 50px; 
     display: flex;
-    align-items: center; /* centraliza vertical */
+    align-items: center;
     justify-content: center;
 }
 
@@ -306,14 +305,12 @@ nav a:hover {
     margin: 0 0 15px 0;
 }
 
-/* empurra o botao pro fundo do card travando o alinhamento */
 .card-produto .botao {
     margin-top: auto;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* botoes padrao */
 .botao {
     display: inline-block;
     background-color: #004080;
@@ -331,7 +328,7 @@ nav a:hover {
 
 
 /* ========================================================== */
-/* PÁGINA DE PRODUTO, GLOSSÁRIO E TABELAS                     */
+/* PÁGINA DE PRODUTO, GLOSSÁRIO E TABELAS DO PDF 6            */
 /* ========================================================== */
 
 .container-produto {
@@ -491,7 +488,7 @@ nav a:hover {
     margin-top: 50px;
 }
 
-/* tabelas padrao (aula 6) */
+/* estilos pra tabelas basicas (pdf 6) */
 .tabela-magia {
     width: 100%;
     border-collapse: collapse; 
@@ -518,10 +515,9 @@ nav a:hover {
 
 
 /* ========================================================== */
-/* CSS DAS PAGINAS NOVAS (FORMULARIOS E TABELA DO CARRINHO)   */
+/* FORMULÁRIOS (PDF 7) E TABELA AVANÇADA DO CARRINHO          */
 /* ========================================================== */
 
-/* formularios pdf 7 */
 .container-form {
     max-width: 600px;
     margin: 50px auto;
@@ -545,6 +541,7 @@ nav a:hover {
     font-weight: bold;
 }
 
+/* formatando todos os tipos de input do pdf 7 juntos */
 .container-form input[type="text"],
 .container-form input[type="password"],
 .container-form input[type="email"],
@@ -571,6 +568,7 @@ nav a:hover {
     margin-top: 10px;
 }
 
+/* formatacao dos botoes de envio (submit) e reset do form */
 .botoes-form input[type="submit"],
 .botoes-form input[type="reset"],
 .botoes-form button {
@@ -611,7 +609,7 @@ nav a:hover {
     font-weight: normal;
 }
 
-/* tabela avançada do carrinho (pdf 6) */
+/* estilos essenciais pra tabela avancada do carrinho */
 .container-carrinho {
     max-width: 900px;
     margin: 50px auto;
@@ -648,6 +646,7 @@ nav a:hover {
     font-weight: bold;
 }
 
+/* formatando a tag footer exigida no pdf 8 */
 footer {
     background-color: #020305;
     color: #555;
@@ -656,11 +655,12 @@ footer {
     border-top: 1px solid #1a222d;
     margin-top: 50px;
 }
+
+
 /* ========================================================== */
 /* PÁGINA SOBRE NÓS (FORMATAÇÃO DE TEXTO DO PDF 3)            */
 /* ========================================================== */
 
-/* container principal q imita um pergaminho no escuro */
 .container-sobre {
     max-width: 800px;
     margin: 50px auto;
@@ -668,7 +668,6 @@ footer {
     background-color: #0b0e14;
     border: 1px solid #1a222d;
     border-radius: 8px;
-    /* sombra interna pra dar um clima de misterio */
     box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8); 
 }
 
@@ -680,7 +679,6 @@ footer {
     letter-spacing: 2px;
 }
 
-/* espacamento do texto e cor puxada pro cinza pra n doer o olho */
 .historia-loja {
     margin-top: 30px;
     line-height: 1.8;
@@ -692,7 +690,6 @@ footer {
     margin-bottom: 20px;
 }
 
-/* caixinha separada pro letreiro do marquee */
 .citacao-fundador {
     margin-top: 40px;
     padding: 20px;
@@ -701,6 +698,7 @@ footer {
     font-style: italic;
     border-radius: 0 4px 4px 0;
 }
+
 .input-qtd {
     width: 60px;
     padding: 8px;

@@ -1,4 +1,4 @@
-// banco de dados com os livros e info corretas
+// uso de objetos literais pra simular o banco de dados
 const bancoDeLivros = {
     "ss1": { titulo: "Shadow Slave - Vol. 1: Child of Shadows", autor: "Guiltythree", preco: "R$ 89,90", edicao: "1", capa: "../IMG/livros/SS-book1.jpg", sinopse: "Sunny é um jovem que vive na pobreza e acaba sendo escolhido pelo Feitiço do Pesadelo.", paginas: "420", editora: "Empório Mágico", idioma: "Português", genero: "Dark Fantasy", acabamento: "Capa Dura", entrega: "📦 Entrega via Corvo em 3 dias." },
     "ss2": { titulo: "Shadow Slave - Vol. 2: Demon of Change", autor: "Guiltythree", preco: "R$ 99,90", edicao: "1", capa: "../IMG/livros/SS-book2.jpg", sinopse: "Agora como um Desperto, Sunny enfrenta a Cidade Sombria.", paginas: "480", editora: "Empório Mágico", idioma: "Português", genero: "Dark Fantasy", acabamento: "Capa Dura", entrega: "📦 Entrega via Corvo em 3 dias." },
@@ -22,11 +22,15 @@ const bancoDeLivros = {
 // ==========================================
 // LOGICA DA TELA DE PRODUTO
 // ==========================================
+
+// capturando variaveis pela url via javascript
 const parametrosUrl = new URLSearchParams(window.location.search);
 const idDoLivro = parametrosUrl.get('id');
 const livroSelecionado = bancoDeLivros[idDoLivro];
 
+// condicional simples
 if (livroSelecionado) {
+    // manipulacao de dom alterando os dados no html
     document.getElementById('livro-capa').src = livroSelecionado.capa;
     document.getElementById('livro-titulo').innerHTML = livroSelecionado.titulo;
     document.getElementById('livro-autor').innerHTML = livroSelecionado.autor;
@@ -40,13 +44,13 @@ if (livroSelecionado) {
     document.getElementById('livro-acabamento').innerHTML = livroSelecionado.acabamento;
     document.getElementById('livro-entrega').innerHTML = livroSelecionado.entrega;
 
-    // muda o comportamento do botao de comprar pra salvar na memoria antes de ir pro carrinho
     let btnCompra = document.querySelector('.botao-compra');
     if(btnCompra) {
+        // evento de clique aplicado dinamicamente
         btnCompra.onclick = function(e) {
-            e.preventDefault(); // cancela o link padrao
+            e.preventDefault(); 
             adicionarAoCarrinho(idDoLivro);
-            window.location.href = "carrinho.html"; // redireciona depois de salvar
+            window.location.href = "carrinho.html"; 
         }
     }
 }
@@ -56,33 +60,32 @@ if (livroSelecionado) {
 // LOGICA DO CARRINHO COM LOCALSTORAGE (SISTEMA DINAMICO)
 // ==========================================
 
-// salva o id do livro no localstorage
 function adicionarAoCarrinho(id) {
+    // uso do localstorage pra manter dados no navegador
     let carrinhoStorage = JSON.parse(localStorage.getItem('emporioCarrinho')) || [];
     let index = carrinhoStorage.findIndex(item => item.id === id);
     
-    // se o livro ja ta no carrinho, aumenta a quantidade. se nao, adiciona.
     if (index > -1) {
         carrinhoStorage[index].qtd += 1;
     } else {
+        // adicionando item novo no array
         carrinhoStorage.push({id: id, qtd: 1});
     }
     localStorage.setItem('emporioCarrinho', JSON.stringify(carrinhoStorage));
 }
 
-// le o storage e monta as tags tr e td dinamicamente
 function renderizarCarrinho() {
     let corpoCarrinho = document.getElementById('corpo-carrinho');
-    if (!corpoCarrinho) return; // roda so se estiver na pagina do carrinho
+    if (!corpoCarrinho) return; 
 
     let carrinhoStorage = JSON.parse(localStorage.getItem('emporioCarrinho')) || [];
-    corpoCarrinho.innerHTML = ''; // limpa a tabela antes de preencher
+    corpoCarrinho.innerHTML = ''; 
 
     let freteElem = document.getElementById('valor-frete');
     let taxaElem = document.getElementById('valor-taxa');
     let totalElem = document.getElementById('total-compra');
 
-    // se o carrinho tiver vazio
+    // condicional pra carrinho vazio
     if (carrinhoStorage.length === 0) {
         corpoCarrinho.innerHTML = `<tr><td colspan="6" align="center" style="padding: 40px; color: #b3b3b3;">Seu carrinho está vazio. Explore o Acervo para invocar relíquias!</td></tr>`;
         freteElem.innerText = 'R$ 0,00';
@@ -93,15 +96,17 @@ function renderizarCarrinho() {
 
     let totalProdutos = 0;
 
-    // laco de repeticao q monta cada linha de livro
+    // laco de repeticao forEach pra varrer o array do carrinho
     carrinhoStorage.forEach((item) => {
         let livro = bancoDeLivros[item.id];
         if(!livro) return;
 
+        // conversao de string pra float na matematica do carrinho
         let precoNum = parseFloat(livro.preco.replace('R$ ', '').replace(',', '.'));
         let subtotal = precoNum * item.qtd;
         totalProdutos += subtotal;
 
+        // criando elementos html via js dinamicamente
         let tr = document.createElement('tr');
         tr.innerHTML = `
             <td align="center"><img src="${livro.capa}" class="foto-item-carrinho" alt="Capa"></td>
@@ -118,8 +123,7 @@ function renderizarCarrinho() {
         corpoCarrinho.appendChild(tr);
     });
 
-    // calcula as taxas e atualiza o tfoot (rodape)
-    let taxasFixas = 20.00; // 15 de frete + 5 arcana
+    let taxasFixas = 20.00; 
     let totalFinal = totalProdutos + taxasFixas;
 
     freteElem.innerText = 'R$ 15,00';
@@ -127,26 +131,24 @@ function renderizarCarrinho() {
     totalElem.innerText = 'R$ ' + totalFinal.toFixed(2).replace('.', ',');
 }
 
-// atualiza a quantidade de um livro q ja ta no carrinho
 function mudarQtd(id, novaQtd) {
     let carrinhoStorage = JSON.parse(localStorage.getItem('emporioCarrinho')) || [];
     let index = carrinhoStorage.findIndex(item => item.id === id);
     if (index > -1) {
         carrinhoStorage[index].qtd = parseInt(novaQtd) || 1;
         localStorage.setItem('emporioCarrinho', JSON.stringify(carrinhoStorage));
-        renderizarCarrinho(); // regera a tabela
+        renderizarCarrinho(); 
     }
 }
 
-// apaga o livro do carrinho
 function removerDoCarrinho(id) {
     let carrinhoStorage = JSON.parse(localStorage.getItem('emporioCarrinho')) || [];
+    // manipulacao de array usando filter
     carrinhoStorage = carrinhoStorage.filter(item => item.id !== id);
     localStorage.setItem('emporioCarrinho', JSON.stringify(carrinhoStorage));
-    renderizarCarrinho(); // regera a tabela
+    renderizarCarrinho(); 
 }
 
-// evita do cara ir pro pagamento se o carrinho tiver vazio
 function verificarCheckout(event) {
     let carrinhoStorage = JSON.parse(localStorage.getItem('emporioCarrinho')) || [];
     if (carrinhoStorage.length === 0) {
@@ -165,6 +167,7 @@ function processarTeste() {
     
     let contagem = { ss: 0, lotr: 0, pj: 0, hp: 0 };
     
+    // laco de repeticao for normal
     for (let i = 1; i <= 3; i++) {
         let resp = dados.get('p' + i);
         if (resp) contagem[resp]++;
@@ -187,5 +190,5 @@ function processarTeste() {
     window.scrollTo({ top: resultadoDiv.offsetTop, behavior: 'smooth' });
 }
 
-// Inicia o renderizador do carrinho logo q a pagina carrega
+// dispara a funcao assim que a pagina carrega
 window.onload = renderizarCarrinho;
